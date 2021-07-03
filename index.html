@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notesy - Notes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <span class="comp-name">NOTESY</span>
+      <br />
+      <span class="comp-disc"
+        >Make and manage your notes easier than ever!</span
+      >
+    </div>
+
+    <div class="options-bar">
+      <div class="options-item">
+        <input type="checkbox" name="" id="dark-check" class="" /><i
+          class="bx icon bx-moon"
+          id="icon"
+        ></i>
+        <br />
+        <span class="option-name">Theme</span>
+      </div>
+    </div>
+    <div class="input-container">
+      <span class="new-note"
+        ><i class="bx bx-message-square-add"></i> New note</span
+      >
+      <input
+        type="text"
+        class="input-item"
+        id="note-title"
+        placeholder="Title"
+      />
+      <textarea
+        name=""
+        class="input-item"
+        id="note-disc"
+        placeholder="Description"
+        rows="5"
+      ></textarea>
+      <button id="add-btn">Submit</button>
+    </div>
+
+    <div class="error-msg" id="e-msg"></div>
+
+    <div class="notes" id="notes">
+      <!-- <div id="note">
+        <span class="note-counter"></span>
+        <br />
+        <span class="note-title"></span>
+        <br />
+        <span class="note-text"></span>
+        <br />
+        <button class="note-btn del-btn">delete</button>
+        <button class="note-btn edit-btn">edit</button>
+      </div> -->
+    </div>
+  </body>
+
+  <script src="index.js"></script>
+
+  <script>
+    const toggleSwitch = document.getElementById("dark-check");
+    const currentTheme = localStorage.getItem("theme");
+    const icon = document.getElementById("icon");
+
+    if (currentTheme) {
+      document.documentElement.setAttribute("data-theme", currentTheme);
+
+      if (currentTheme === "dark") {
+        toggleSwitch.checked = true;
+        icon.classList.remove("bx-moon");
+        icon.classList.add("bx-sun");
+      }
+    }
+
+    icon.onclick = function () {
+      if (toggleSwitch.checked === false) {
+        toggleSwitch.checked = true;
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        icon.classList.remove("bx-moon");
+        icon.classList.add("bx-sun");
+      } else {
+        toggleSwitch.checked = false;
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+        icon.classList.remove("bx-sun");
+        icon.classList.add("bx-moon");
+      }
+    };
+  </script>
+</html>

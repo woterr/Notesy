@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baumans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+:root {
+  --bodybackground: #ffffff;
+  --headerbackground: #fff;
+  --fontcolor: #252525;
+  --disccolor: rgb(61, 61, 61);
+  --inputbackground: rgb(219, 219, 219);
+  --notecolor: rgb(231, 231, 231);
+}
+
+[data-theme="dark"] {
+  --bodybackground: #292929;
+  --fontcolor: #eeeeee;
+  --headerbackground: rgb(26, 26, 26);
+  --disccolor: rgb(209, 209, 209);
+  --inputbackground: rgb(54, 54, 54);
+  --notecolor: rgb(36, 36, 36);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s;
+  background-color: var(--bodybackground);
+  overflow-x: hidden;
+  font-family: "Varela Round", sans-serif;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+::selection {
+  background: #ffb9b9 !important;
+  color: white;
+}
+
+.header {
+  padding: 10px;
+  transition: all 0.3s;
+  font-family: "Varela Round", sans-serif;
+  text-align: center;
+  min-width: 100%;
+}
+
+.comp-name {
+  font-family: "Baumans", cursive;
+  letter-spacing: 4px;
+  transition: all 0.3s;
+  font-size: 30px;
+  color: var(--fontcolor);
+}
+
+.comp-disc {
+  transition: all 0.3s;
+  color: var(--disccolor);
+}
+
+.options-bar {
+  padding: 15px;
+}
+
+.options-item {
+  text-align: center;
+}
+
+.option-name {
+  color: var(--fontcolor);
+  transition: all 0.3s;
+}
+
+#dark-check {
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
+}
+
+.icon {
+  background-color: #ececec;
+  padding: 10px;
+  z-index: 10;
+  font-size: 16px;
+  border-radius: 50px;
+  color: #141414;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.icon:hover {
+  background-color: #7e7e7e;
+  transition: all 0.3s;
+  color: #ececec;
+}
+
+.input-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(20, 20, 20, 0.308);
+  font-family: "Poppins", sans-serif;
+}
+
+.new-note {
+  font-size: 22px;
+  color: #666666;
+  font-weight: 600;
+}
+
+.input-item {
+  border-radius: 30px;
+  border: 2px solid rgb(116, 116, 116);
+  background: none;
+  padding: 15px;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 20px;
+  outline: none;
+  color: var(--fontcolor);
+  width: 270px;
+  font-family: "Varela Round", sans-serif;
+  resize: none;
+  margin: 10px;
+}
+
+#add-btn {
+  background: none;
+  border: 2px solid #23ffab;
+  padding: 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: var(--fontcolor);
+  outline: 0;
+  transition: all 0.3s;
+}
+
+#add-btn:hover {
+  border: 2px solid #f7f7f7;
+  transition: all 0.3s;
+  color: #23ffab;
+}
+
+.error-msg {
+  background: #f53434;
+  color: white;
+  display: none;
+  padding: 10px;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.notes {
+  display: inline-flex;
+  padding: 10px;
+  width: 1000px;
+  flex-wrap: wrap;
+}
+
+#note {
+  flex: 1;
+  margin: 10px;
+  background: var(--notecolor);
+  box-shadow: 0 0 20px #1414142c;
+  border-radius: 15px;
+  padding: 10px;
+  height: 200px;
+  transition: all 0.3s;
+  overflow: hidden;
+  min-width: 300px;
+  position: relative;
+}
+
+.note-counter {
+  position: absolute;
+  font-size: 100px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.2;
+  background: none;
+  top: 5px;
+  right: 10px;
+}
+
+.note-title {
+  font-size: 30px;
+  color: var(--fontcolor);
+  transition: all 0.3s;
+  z-index: 3;
+}
+
+.note-btn {
+  display: block;
+  padding: 10px;
+  color: white;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin: 10px 0;
+}
+
+.del-btn {
+  background: #ff5454;
+}
+
+.edit-btn {
+  background: #7d58ff;
+}
+
+.note-text {
+  transition: all 0.3s;
+  z-index: 3;
+  font-size: 15px;
+  color: var(--fontcolor);
+}
