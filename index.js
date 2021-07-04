@@ -44,11 +44,10 @@ function showNotes() {
       <div id="note">
         <span class="note-counter">${index + 1}</span>
         <span class="note-title">${element.title}</span>
+        <p class="note-text">${element.disc}</p>
         <br />
-        <span class="note-text">${element.disc}</span>
-        <br />
-        <button id="${index}" onclick="deletenote(this.id)" class="note-btn del-btn">Delete <i class='bx bx-trash'></i></button>
-        <button id="${index}" onclick="editnote(this.id)" class="note-btn edit-btn">Edit <i class='bx bx-message-square-edit'></i></button>
+        <button id="${index}" onclick="deletenote(this.id)" class="note-btn del-btn"><i class='bx bx-trash'></i></button>
+        <button id="${index}" onclick="editnote(this.id)" class="note-btn edit-btn"><i class='bx bx-message-square-edit'></i></button>
       </div>
         `;
     })

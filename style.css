@@ -34,7 +34,11 @@ body {
 
 ::selection {
   background: #ffb9b9 !important;
-  color: white;
+  color: rgb(75, 75, 75);
+}
+
+::-webkit-scrollbar {
+  width: 3px;
 }
 
 .header {
@@ -163,6 +167,8 @@ body {
   padding: 10px;
   max-width: 1000px;
   flex-wrap: wrap;
+  color: var(--fontcolor);
+  transition: all 0.3s;
 }
 
 #note {
@@ -170,7 +176,10 @@ body {
   margin: 10px;
   background: var(--notecolor);
   box-shadow: 0 0 20px #1414142c;
-  border-radius: 15px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
   padding: 10px;
   height: 200px;
   transition: all 0.3s;
@@ -209,11 +218,20 @@ body {
   margin: 10px 0;
 }
 
+.note-btn:hover {
+  transform: scale(1.1);
+}
+
 .del-btn {
   background: #ff5454;
+  position: absolute;
+  bottom: 0;
 }
 
 .edit-btn {
+  position: absolute;
+  bottom: 0;
+  left: 60px;
   background: #7d58ff;
 }
 
@@ -222,4 +240,7 @@ body {
   z-index: 3;
   font-size: 15px;
   color: var(--fontcolor);
+  overflow-y: scroll;
+  height: 100px;
+  word-wrap: break-word;
 }
