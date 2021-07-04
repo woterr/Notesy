@@ -38,7 +38,12 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 1px;
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--inputbackground);
 }
 
 .header {
@@ -208,12 +213,15 @@ body {
 
 .note-btn {
   display: block;
-  padding: 10px;
-  color: white;
+  padding: 5px;
+  color: var(--fontcolor);
   transition: all 0.3s;
   cursor: pointer;
   border-radius: 10px;
+  font-size: 16px;
+  background: none;
   border: none;
+  text-align: center;
   outline: none;
   margin: 10px 0;
 }
@@ -223,16 +231,17 @@ body {
 }
 
 .del-btn {
-  background: #ff5454;
+  border: 2px solid #f53434;
   position: absolute;
   bottom: 0;
+  right: 10px;
 }
 
 .edit-btn {
   position: absolute;
+  border: 2px solid #7d58ff;
   bottom: 0;
-  left: 60px;
-  background: #7d58ff;
+  right: 50px;
 }
 
 .note-text {
