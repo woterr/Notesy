@@ -7,7 +7,7 @@ addBtn.addEventListener("click", (e) => {
     if (addTitle.value == "" || addDisc.value == "") {
 
         eMsg.style.display = "block"
-        eMsg.innerHTML = "Error! Either of the feilds are incomplete!"
+        eMsg.innerHTML = "Error! Either of the fields are incomplete!"
         return
     }
 
